@@ -1,5 +1,5 @@
 FROM debian:jessie
-MAINTAINER Amulya P Malla  <amulya.malla@srijan.net>
+MAINTAINER Amulya P Malla  <amulyapmalla@gmail.com>
 
 # update the package sources, clamd
 RUN apt-get update --fix-missing \
@@ -17,7 +17,7 @@ RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key
 	&& rm -rf /var/lib/apt/lists/* /var/cache/apt/* \
 	&& sed -i 's/"$HERE\/chrome"/"$HERE\/chrome" --no-sandbox/g' /opt/google/chrome/google-chrome
 
-
+# Java Installation 
 RUN \
     echo "===> add webupd8 repository..."  && \
     echo "deb http://ppa.launchpad.net/webupd8team/java/ubuntu trusty main" | tee /etc/apt/sources.list.d/webupd8team-java.list  && \
