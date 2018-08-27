@@ -9,8 +9,6 @@ RUN apt-get update --fix-missing \
     vim openssh-server software-properties-common net-tools 
     
 ENV SONAR_DOWNLOAD_URL https://sonarsource.bintray.com/Distribution
-ENV SONAR_SCANNER_VERSION 3.2.0.1227 
-ENV SONAR_SCANNER_HOME /opt/sonarqube/sonar-scanner-${SONAR_SCANNER_VERSION}-linux
 
 # Installing Plugins
 RUN cd /opt/sonarqube/extensions/plugins/
