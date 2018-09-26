@@ -1,0 +1,22 @@
+version: '2'
+services:
+  master:
+    build: ./jmeter-master
+    container_name: master
+    tty: true
+    networks:
+      - jmeter
+    command: /bin/bash
+    ports:
+      - "60000"   
+  slave:
+    build: ./jmeter-server
+    tty: true
+    networks:
+      - jmeter
+    ports:
+      - "1099"
+      - "50000"
+networks:
+  jmeter:
+    driver: bridge      
